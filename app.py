@@ -28,7 +28,6 @@ with col3:
 
 # Path to your local PDB file
 pdb_path = "./Media/SPE2.pdb"
-=======
 # ---- Contact Section ----
 st.header("📬 Contact")
 
@@ -118,7 +117,6 @@ else:
 # - Combine static images with interactive elements.
 # - Perfect for defending or sharing complex bioinformatics visualizations.
 # """)
-=======
     if submitted:
         mailto_link = f"mailto:Albert.THORHALLSSON@univ-cotedazur.fr?subject={subject}&body=From: {name} ({email})%0A%0A{message}"
         st.markdown(f"[📨 Click here to send via your email client]({mailto_link})", unsafe_allow_html=True)
