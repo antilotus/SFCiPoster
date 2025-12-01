@@ -26,13 +26,11 @@ with col2:
 with col3:
     display_tile("charges_frame_10.png", "pages/NPAchargesTMT.py", " Mulliken Charges")
 
-<<<<<<< HEAD
 # Path to your local PDB file
 pdb_path = "./Media/SPE2.pdb"
 =======
 # ---- Contact Section ----
 st.header("📬 Contact")
->>>>>>> 0a5ca80 (Fixing first commit)
 
 with st.form("contact_form"):
     name = st.text_input("Your Name")
@@ -42,7 +40,6 @@ with st.form("contact_form"):
 
     submitted = st.form_submit_button("Send Email")
 
-<<<<<<< HEAD
     # Show full protein in cartoon
     view.setStyle({'cartoon': {'color': 'white'}})
 
