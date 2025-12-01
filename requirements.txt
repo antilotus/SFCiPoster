@@ -10,4 +10,3 @@ seaborn
 MDAnalysis
 streamlit-extras
 rdkit
-glob
