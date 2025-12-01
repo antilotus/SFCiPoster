@@ -4,6 +4,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import Normalize
 from matplotlib.cm import ScalarMappable, get_cmap
+import streamlit as st
+import py3Dmol
+import os
+import streamlit as st
+
+
+
+st.set_page_config(page_title="NPA charges", layout="wide")
+st.title("NPA charges")
 """
 As there is an issue with trying to pip install this package I simply did a git clone and then cp the rdkit_heatmap folder into the directory I am working in. It is not a very good fix but it is fine for just trying the package
 """
