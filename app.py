@@ -3,33 +3,21 @@ import streamlit as st
 st.set_page_config(page_title="SFCi poster ESI", layout="wide")
 
 st.title("🎓 Welcome to the SFCi poster ESI")
-st.markdown("### Explore a Topic:")
 
 # Uniform image display size (e.g., 250px height)
 IMAGE_HEIGHT = 250
 
-# Helper to make consistent tile layout
-def display_tile(image_path, link_path, label, height=IMAGE_HEIGHT):
-    st.image(image_path,  output_format="auto", caption="", clamp=True)
-    st.markdown("<div style='height:20px'></div>", unsafe_allow_html=True)  # vertical spacing
-    st.page_link(link_path, label=label)
-
-## ---- Tile Layout ----
-#col1, col2, col3 = st.columns(3)
-#
-#with col1:
-#    display_tile("./Media/NBOcharges_frame_10.png", "pages/NPAchargesTMT.py", "NPA Charges")
-#
-#with col2:
-#    display_tile("./Media/disp_frame_10.png", "pages/dispersionTMT.py", "ADLD")
-#
-#with col3:
-#    display_tile("./Media/charges_frame_10.png", "pages/AgOR28vis.py", "Mulliken Charges")
-#    
-# ---- Contact Section ----
+st.header('Natural Population Analysis Charges')
 st.image('Media/NBO.gif')
+st.header('Atomic Decomposition of London Dispersion')
 st.image('Media/dispersion.gif')
+st.header('Mulliken Analysis Charges')
 st.image('Media/mullikencharges.gif')
+st.header('Mulliken Analysis Charges (all QM atoms)')
+st.image('Media/mullikenallqmwcolorbar.gif')
+
+st.write('(1) Zhao, J.; Chen, A. Q.; Ryu, J.; del Mármol, J. Structural Basis of Odor Sensing by Insect Heteromeric Odorant Receptors. Science 2024, 384 (6703), 1460–1467. https://doi.org/10.1126/science.adn6384.')
+
 st.header("📬 Contact")
 
 with st.form("contact_form"):
