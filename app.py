@@ -18,13 +18,13 @@ def display_tile(image_path, link_path, label, height=IMAGE_HEIGHT):
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    display_tile("NBOcharges_frame_10.png", "pages/NPAchargesTMT.py", " NPA Charges")
+    display_tile("./Media/NBOcharges_frame_10.png", "./pages/NPAchargesTMT.py", " NPA Charges")
 
 with col2:
-    display_tile("disp_frame_10.png", "pages/NPAchargesTMT.py", " ADLD")
+    display_tile("./Media/disp_frame_10.png", "./pages/NPAchargesTMT.py", " ADLD")
 
 with col3:
-    display_tile("charges_frame_10.png", "pages/AgOR28vis.py", " Mulliken Charges")
+    display_tile("./Media/charges_frame_10.png", "./pages/AgOR28vis.py", " Mulliken Charges")
     
 # ---- Contact Section ----
 st.header("📬 Contact")
