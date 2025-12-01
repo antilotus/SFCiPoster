@@ -125,4 +125,3 @@ else:
     if submitted:
         mailto_link = f"mailto:Albert.THORHALLSSON@univ-cotedazur.fr?subject={subject}&body=From: {name} ({email})%0A%0A{message}"
         st.markdown(f"[📨 Click here to send via your email client]({mailto_link})", unsafe_allow_html=True)
->>>>>>> 0a5ca80 (Fixing first commit)
