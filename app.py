@@ -50,7 +50,7 @@ with st.form("contact_form"):
     view.zoomTo()
 
     # Zoom to specific resnames (only if they exist)
-    view.setStyle({'resn': 'LIG'}, {'stick': {'colorscheme': 'greenCarbon'}})
+    view.setStyle({'resn': 'LIG'}, {'stick': {'colorscheme': 'GreyCarbon'}})
     #view.setStyle({'resn': 'NPH'}, {'stick': {'colorscheme': 'GreenCarbon'}})
 
     view.addLabel("TMT", {
@@ -71,7 +71,7 @@ with st.form("contact_form"):
     # Licorice for specific residue numbers
     highlight_residues = [1466,1490,1493,1494,1497,1562,1589,1614,1617,1618,1621,1725]
     for resid in highlight_residues:
-        view.setStyle({'resi': str(resid)}, {'stick': {'colorscheme': 'BlueCarbon'}})
+        view.setStyle({'resi': str(resid)}, {'stick': {'colorscheme': 'RedCarbon'}})
         view.addLabel(f"Resid {resid}", {
             'position': {'resi': str(resid)},
             'backgroundColor': 'white',
@@ -84,9 +84,9 @@ with st.form("contact_form"):
 
 
     # Set orientation manually (rotation in degrees)
-    view.rotate(-220, 'x')
-    view.rotate(-40, 'y')
-    view.rotate(-160, 'z') 
+    view.rotate(0, 'x')
+    view.rotate(0, 'y')
+    view.rotate(0, 'z') 
     view.zoomTo({'or': [
         {'resn': 'LIG'},
         {'resi': [str(r) for r in highlight_residues]}
