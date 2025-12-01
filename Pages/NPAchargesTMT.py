@@ -6,10 +6,6 @@ from matplotlib.colors import Normalize
 from matplotlib.cm import ScalarMappable, get_cmap
 import streamlit as st
 import py3Dmol
-import os
-import streamlit as st
-
-
 
 st.set_page_config(page_title="NPA charges", layout="wide")
 st.title("NPA charges")
