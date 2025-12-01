@@ -21,7 +21,7 @@ with col1:
     display_tile("./Media/NBOcharges_frame_10.png", "./pages/NPAchargesTMT.py", " NPA Charges")
 
 with col2:
-    display_tile("./Media/disp_frame_10.png", "./pages/NPAchargesTMT.py", " ADLD")
+    display_tile("./Media/disp_frame_10.png", "./pages/dispersionTMT.py", " ADLD")
 
 with col3:
     display_tile("./Media/charges_frame_10.png", "./pages/AgOR28vis.py", " Mulliken Charges")
