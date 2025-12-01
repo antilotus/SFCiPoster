@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="Thesis Portal", layout="wide")
+st.set_page_config(page_title="SFCi poster ESI", layout="wide")
 
 st.title("🎓 Welcome to the SFCi poster ESI")
 #st.markdown("### 🔍 Explore a Topic:")
