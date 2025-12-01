@@ -26,7 +26,8 @@ st.write('(6) Olsson, M. H. M.; Søndergaard, C. R.; Rostkowski, M.; Jensen, J. 
 st.write('(7) Schott-Verdugo, S.; Gohlke, H. PACKMOL-Memgen: A Simple-To-Use, Generalized Workflow for Membrane-Protein–Lipid-Bilayer System Building. Journal of Chemical Information and Modeling 2019. https://doi.org/10.1021/acs.jcim.9b00269.')
 st.write('(8) Jorgensen, W. L.; Chandrasekhar, J.; Madura, J. D.; Impey, R. W.; Klein, M. L. Comparison of Simple Potential Functions for Simulating Liquid Water. J. Chem. Phys. 1983, 79 (2), 926–935. https://doi.org/10.1063/1.445869.')
 st.write('(9) Tian, C.; Kasavajhala, K.; Belfon, K. A. A.; Raguette, L.; Huang, H.; Migues, A. N.; Bickel, J.; Wang, Y.; Pincay, J.; Wu, Q.; Simmerling, C. ff19SB: Amino-Acid-Specific Protein Backbone Parameters Trained against Quantum Mechanics Energy Surfaces in Solution. Journal of Chemical Theory and Computation 2019. https://doi.org/10.1021/acs.jctc.9b00591.')
-st.write('(10) Gaussian 16, Revision A.03,
+st.write("""
+(10) Gaussian 16, Revision A.03,
  M. J. Frisch, G. W. Trucks, H. B. Schlegel, G. E. Scuseria,
  M. A. Robb, J. R. Cheeseman, G. Scalmani, V. Barone,
  G. A. Petersson, H. Nakatsuji, X. Li, M. Caricato, A. V. Marenich,
@@ -42,7 +43,8 @@ st.write('(10) Gaussian 16, Revision A.03,
  K. Raghavachari, A. P. Rendell, J. C. Burant, S. S. Iyengar,
  J. Tomasi, M. Cossi, J. M. Millam, M. Klene, C. Adamo, R. Cammi,
  J. W. Ochterski, R. L. Martin, K. Morokuma, O. Farkas,
- J. B. Foresman, and D. J. Fox, Gaussian, Inc., Wallingford CT, 2016.')
+ J. B. Foresman, and D. J. Fox, Gaussian, Inc., Wallingford CT, 2016.
+ """)
 st.write('(11) Becke, A. D. Density-Functional Exchange-Energy Approximation with Correct Asymptotic Behavior. Phys. Rev. A 1988, 38 (6), 3098. https://doi.org/10.1103/PhysRevA.38.3098.')
 st.write('(12) Lee, C.; Yang, W.; Parr, R. G. Development of the Colle-Salvetti Correlation-Energy Formula into a Functional of the Electron Density. Phys. Rev. B 1988, 37 (2), 785. https://doi.org/10.1103/PhysRevB.37.785.')
 st.write('(13) Becke, A. D. Density‐functional Thermochemistry. III. The Role of Exact Exchange. J. Chem. Phys. 1993, 98 (7), 5648–5652. https://doi.org/10.1063/1.464913.')
