@@ -43,7 +43,7 @@ st.header("Images")
 st.header("3D Protein Structure Viewer with Custom Style")
 
 # Path to your local PDB file
-pdb_path = "/Media/SPE2.pdb"
+pdb_path = "./Media/SPE2.pdb"
 
 if os.path.exists(pdb_path):
     with open(pdb_path, "r") as f:
@@ -114,8 +114,8 @@ else:
 
 
 # --- Section 5: Video ---
-st.header("Video")
-st.video("../Videos/graph_evolution.mp4",autoplay=True)  # Supports local or URL path
+#st.header("Video")
+#st.video("../media.mp4",autoplay=True)  # Supports local or URL path
 
 # --- Section 6: Markdown and Uploads ---
 # st.header("Upload & Notes")
