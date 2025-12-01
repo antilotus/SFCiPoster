@@ -1,0 +1,12 @@
+streamlit
+py3Dmol
+pandas
+numpy
+matplotlib
+plotly
+networkx
+pyvis
+seaborn
+MDAnalysis
+streamlit-extras
+rdkit
