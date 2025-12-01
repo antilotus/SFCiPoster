@@ -1,4 +1,6 @@
 import streamlit as st
+import py3Dmol
+import os
 
 st.set_page_config(page_title="SFCi poster ESI", layout="wide")
 
@@ -15,6 +17,76 @@ st.header('Mulliken Analysis Charges')
 st.image('Media/mullikencharges.gif')
 st.header('Mulliken Analysis Charges (all QM atoms)')
 st.image('Media/mullikenallqmwcolorbar.gif')
+
+st.header("AgOR28 with 2,4,5-Trimethylthiazole")
+
+# Path to your local PDB file
+pdb_path = "./Media/SPE2.pdb"
+
+if os.path.exists(pdb_path):
+    with open(pdb_path, "r") as f:
+        pdb_data = f.read()
+
+    # Load and visualize the PDB
+    view = py3Dmol.view(width=800, height=500)
+    view.addModel(pdb_data, "pdb")
+
+    # Show full protein in cartoon
+    view.setStyle({'cartoon': {'color': 'white'}})
+
+    # Optional: zoom to whole protein first (you can adjust this)
+    view.zoomTo()
+
+    # Zoom to specific resnames (only if they exist)
+    view.setStyle({'resn': 'LIG'}, {'stick': {'colorscheme': 'GreyCarbon'}})
+    #view.setStyle({'resn': 'NPH'}, {'stick': {'colorscheme': 'GreenCarbon'}})
+
+    view.addLabel("TMT", {
+        'position': {'resn': "LIG"},
+        'backgroundColor': 'blue',
+        'fontColor': 'black',
+        'fontSize': 12
+    })
+
+    #view.addLabel("NPH", {
+    #    'position': {'resn': 'NPH'},
+    #    'backgroundColor': 'blue',
+    #    'fontColor': 'blue',
+    #    'fontSize': 12
+    #})
+    # view.zoomTo({'resn': ['DHK', 'NPH']})
+
+    # Licorice for specific residue numbers
+    highlight_residues = [1466,1490,1493,1494,1497,1562,1589,1614,1617,1618,1621,1725]
+    for resid in highlight_residues:
+        view.setStyle({'resi': str(resid)}, {'stick': {'colorscheme': 'RedCarbon'}})
+        view.addLabel(f"Resid {resid}", {
+            'position': {'resi': str(resid)},
+            'backgroundColor': 'white',
+            'fontColor': 'red',
+            'fontSize': 10
+        })
+
+
+
+
+
+    # Set orientation manually (rotation in degrees)
+    view.rotate(0, 'x')
+    view.rotate(0, 'y')
+    view.rotate(0, 'z') 
+    view.zoomTo({'or': [
+        {'resn': 'LIG'},
+        {'resi': [str(r) for r in highlight_residues]}
+    ]})
+
+    view.setBackgroundColor('white')
+    st.components.v1.html(view._make_html(), height=500)
+
+
+else:
+    st.error(f"PDB file not found at: {pdb_path}")
+
 
 st.header('References')
 st.write('(1) WHO. 2024. Global strategic preparedness, readiness and response plan for dengue and other Aedes-borne arbovirus')
@@ -49,12 +121,12 @@ st.write('(11) Becke, A. D. Density-Functional Exchange-Energy Approximation wit
 st.write('(12) Lee, C.; Yang, W.; Parr, R. G. Development of the Colle-Salvetti Correlation-Energy Formula into a Functional of the Electron Density. Phys. Rev. B 1988, 37 (2), 785. https://doi.org/10.1103/PhysRevB.37.785.')
 st.write('(13) Becke, A. D. Density‐functional Thermochemistry. III. The Role of Exact Exchange. J. Chem. Phys. 1993, 98 (7), 5648–5652. https://doi.org/10.1063/1.464913.')
 st.write('(14) Francl, M. M.; Pietro, W. J.; Hehre, W. J.; Binkley, J. S.; Gordon, M. S.; DeFrees, D. J.; Pople, J. A. Self‐consistent Molecular Orbital Methods. XXIII. A Polarization‐type Basis Set for Second‐row Elements. J. Chem. Phys. 1982, 77 (7), 3654–3665. https://doi.org/10.1063/1.444267.')
-st.write('(15) Wang, J.; Cieplak, P.; Kollman, P. A. How well does a restrained electrostatic potential (RESP) model perform in calculating conformational energies of organic and biological molecules? Journal of Computational Chemistry 2000, 21 (12), 1049–1074. https://doi.org/10.1002/1096-987X(200009)21:12%253C1049::AID-JCC3%253E3.0.CO;2-F.')
+st.write('(15) Wang, J.; Cieplak, P.; Kollman, P. A. How well does a restrained electrostatic potential (RESP) model perform in calculating conformational energies of organic and biological molecules? Journal of Computational Chemistry 2000, 21 (12), 1049–1074. https://doi.org/10.1002/1096-987X(200009)21:12<1049::AID-JCC3>3.0.CO;2-F.')
 st.write('(16) Case, D. A.; Aktulga, H. M.; Belfon, K.; Cerutti, D. S.; Cisneros, G. A.; Cruzeiro, V. W. D.; Forouzesh, N.; Giese, T. J.; Götz, A. W.; Gohlke, H.; Izadi, S.; Kasavajhala, K.; Kaymak, M. C.; King, E.; Kurtzman, T.; Lee, T.-S.; Li, P.; Liu, J.; Luchko, T.; Luo, R.; Manathunga, M.; Machado, M. R.; Nguyen, H. M.; O’Hearn, K. A.; Onufriev, A. V.; Pan, F.; Pantano, S.; Qi, R.; Rahnamoun, A.; Risheh, A.; Schott-Verdugo, S.; Shajan, A.; Swails, J.; Wang, J.; Wei, H.; Wu, X.; Wu, Y.; Zhang, S.; Zhao, S.; Zhu, Q.; Thomas E.  Cheatham, I. I. I.; Roe, D. R.; Roitberg, A.; Simmerling, C.; York, D. M.; Nagan, M. C.; Kenneth M.  Merz, J. AmberTools. Journal of Chemical Information and Modeling 2023. https://doi.org/10.1021/acs.jcim.3c01153.')
 st.write("""(17) D.A. Case, H.M. Aktulga, K. Belfon, I.Y. Ben-Shalom, J.T. Berryman, S.R. Brozell, F.S. Carvahol, D.S. Cerutti, T.E. Cheatham, III, G.A. Cisneros, V.W.D. Cruzeiro, T.A. Darden, N. Forouzesh, M. Ghazimirsaeed, G. Giambaşu, T. Giese, M.K. Gilson, H. Gohlke, A.W. Goetz, J. Harris, Z. Huang, S. Izadi, S.A. Izmailov, K. Kasavajhala, M.C. Kaymak, I. Kolossv\'a ry, A. Kovalenko, T. Kurtzman, T.S. Lee, P. Li, Z. Li, C. Lin, J. Liu, T. Luchko, R. Luo, M. Machado, M. Manathunga, K.M. Merz, Y. Miao, O. Mikhailovskii, G. Monard, H. Nguyen, K.A. O'Hearn, A. Onufriev, F. Pan, S. Pantano, A. Rahnamoun, D.R. Roe, A. Roitberg, C. Sagui, S. Schott-Verdugo, A. Shajan, J. Shen, C.L. Simmerling, N.R. Skrynnikov, J. Smith, J. Swails, R.C. Walker, J. Wang, J. Wang, X. Wu, Y. Wu, Y. Xiong, Y. Xue, D.M. York, C. Zhao, Q. Zhu, and P.A. Kollman (2025), Amber 2025, University of California, San Francisco.
 """)
 st.write('(18) Abraham, M.; Alekseenko, A.; Andrews, B.; Basov, V.; Bauer, P.; Bird, H.; Briand, E.; Brown, A.; Doijade, M.; Fiorin, G.; Fleischmann, S.; Gorelov, S.; Gouaillardet, G.; Gray, A.; Irrgang, M. E.; Jalalypour, F.; Johansson, P.; Kutzner, C.; Łazarski, G.; Lemkul, J. A.; Lundborg, M.; Merz, P.; Miletić, V.; Morozov, D.; Müllender, L.; Nabet, J.; Páll, S.; Pasquadibisceglie, A.; Pellegrino, M.; Piasentin, N.; Rapetti, D.; Sadiq, M. U.; Santuz, H.; Schulz, R.; Shirts, M.; Shugaeva, T.; Shvetsov, A.; Turner, P.; Villa, A.; Wingbermühle, S.; Hess, B.; Lindahl, E. GROMACS 2025.2 Source Code, 2025. https://doi.org/10.5281/zenodo.15387018. (18b) GROMACS: High Performance Molecular Simulations through Multi-Level Parallelism from Laptops to Supercomputers. SoftwareX 2015, 1–2, 19–25. https://doi.org/10.1016/j.softx.2015.06.001.')
-st.write('(19) Hess, B.; Bekker, H.; Berendsen, H. J. C.; Fraaije, J. G. E. M. LINCS: A Linear Constraint Solver for Molecular Simulations. Journal of Computational Chemistry 1997, 18 (12), 1463–1472. https://doi.org/10.1002/(SICI)1096-987X(199709)18:12%253C1463::AID-JCC4%253E3.0.CO;2-H.')
+st.write('(19) Hess, B.; Bekker, H.; Berendsen, H. J. C.; Fraaije, J. G. E. M. LINCS: A Linear Constraint Solver for Molecular Simulations. Journal of Computational Chemistry 1997, 18 (12), 1463–1472. https://doi.org/10.1002/(SICI)1096-987X(199709)18:12<1463::AID-JCC4>.0.CO;2-H.')
 st.write('(20) Bussi, G.; Donadio, D.; Parrinello, M. Canonical Sampling through Velocity Rescaling. J. Chem. Phys. 2007, 126 (1). https://doi.org/10.1063/1.2408420.')
 st.write('(21) Bernetti, M.; Bussi, G. Pressure Control Using Stochastic Cell Rescaling. J. Chem. Phys. 2020, 153 (11). https://doi.org/10.1063/5.0020514.')
 st.write('(22) Michaud-Agrawal, N.; Denning, E. J.; Woolf, T. B.; Beckstein, O. MDAnalysis: A Toolkit for the Analysis of Molecular Dynamics Simulations. Journal of Computational Chemistry 2011, 32 (10), 2319–2327. https://doi.org/10.1002/jcc.21787.')
