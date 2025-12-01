@@ -29,7 +29,7 @@ All equilibration steps employed a 2 fs time step and The LINCS algorithm was us
  
 Quantum Mechanics/Molecular Mechanics (QM/MM) single point energy (SPE) calculations were performed using the quantum chemistry program ORCA<sup style='font-size:.8em;'>23</sup> and r2SCAN<sup style='font-size:.8em;'>24</sup>/TZVPP<sup style='font-size:.8em;'>25,26</sup> basis set was used with a D4 dispersion correction<sup style='font-size:.8em;'>27,28</sup>. The 2,4,5-Trimethylthiazole (TMT) agonist and surrounding environment—residues 75,76,79,140,141,196,199,204 as numbered in the cryo-EM structure—were treated with QM (QM region) while the rest of the protein was treated as point charges.
 <h1>''',
-unsafe_allow_tml=True,)
+unsafe_allow_tml=True)
 
 # Path to your local PDB file
 pdb_path = "./Media/SPE2.pdb"
