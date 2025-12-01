@@ -1,58 +1,48 @@
 import streamlit as st
-import matplotlib.pyplot as plt
-import plotly.express as px
-import py3Dmol
-import pandas as pd
-import numpy as np
-import os
-st.set_page_config(layout="wide")
 
-st.title("Thesis Data Portal: Visualizations and Interactive Elements")
+st.set_page_config(page_title="Thesis Portal", layout="wide")
 
-# --- Section 1: Images ---
-st.header("Images")
-# st.image("/nfs/mathusalem/ldavid/Communications/VISUAL_FOR_PREZ/ligand_movment_prez.png", caption="Example Figure from Results")
+st.title("🎓 Welcome to the SFCi poster ESI")
+#st.markdown("### 🔍 Explore a Topic:")
 
-# # --- Section 2: Matplotlib Graph ---
-# st.header("Matplotlib Graph")
-# fig, ax = plt.subplots()
-# x = np.linspace(0, 10, 100)
-# y = np.sin(x)
-# ax.plot(x, y, label="sin(x)")
-# ax.set_title("Sine Wave")
-# ax.legend()
-# st.pyplot(fig)
+# Uniform image display size (e.g., 250px height)
+IMAGE_HEIGHT = 250
 
+# Helper to make consistent tile layout
+def display_tile(image_path, link_path, label, height=IMAGE_HEIGHT):
+    st.image(image_path,  output_format="auto", caption="", clamp=True)
+    st.markdown("<div style='height:20px'></div>", unsafe_allow_html=True)  # vertical spacing
+    st.page_link(link_path, label=label)
 
+# ---- Tile Layout ----
+col1, col2, col3 = st.columns(3)
 
-# # --- Section 4: 3D Protein Viewer ---
-# st.header("3D Protein Structure Viewer")
-# with st.expander("View Protein in 3D"):
-#     # pdb_id = st.text_input("Enter PDB ID (e.g., 1BNA):", "1BNA")
-#     pdb_id= "2c29"
-#     if pdb_id:
-#         view = py3Dmol.view(query='pdb:' + pdb_id)
-#         view.setStyle({'cartoon': {'color': 'spectrum'}})
-#         view.zoomTo()
-#         view.setBackgroundColor('white')
-#         st.components.v1.html(view._make_html(), height=500)
+with col1:
+    display_tile("NBOcharges_frame_10.png", "pages/NPAchargesTMT.py", " NPA Charges")
 
-# --- Section 4: 3D Protein Viewer (Local File) ---
+with col2:
+    display_tile("disp_frame_10.png", "pages/NPAchargesTMT.py", " ADLD")
 
-# --- Section 4: 3D Protein Viewer (Always Visible) ---
-st.header("3D Protein Structure Viewer with Custom Style")
+with col3:
+    display_tile("charges_frame_10.png", "pages/NPAchargesTMT.py", " Mulliken Charges")
 
+<<<<<<< HEAD
 # Path to your local PDB file
 pdb_path = "./Media/SPE2.pdb"
+=======
+# ---- Contact Section ----
+st.header("📬 Contact")
+>>>>>>> 0a5ca80 (Fixing first commit)
 
-if os.path.exists(pdb_path):
-    with open(pdb_path, "r") as f:
-        pdb_data = f.read()
+with st.form("contact_form"):
+    name = st.text_input("Your Name")
+    email = st.text_input("Your Email")
+    subject = st.text_input("Subject")
+    message = st.text_area("Message")
 
-    # Load and visualize the PDB
-    view = py3Dmol.view(width=800, height=500)
-    view.addModel(pdb_data, "pdb")
+    submitted = st.form_submit_button("Send Email")
 
+<<<<<<< HEAD
     # Show full protein in cartoon
     view.setStyle({'cartoon': {'color': 'white'}})
 
@@ -131,3 +121,8 @@ else:
 # - Combine static images with interactive elements.
 # - Perfect for defending or sharing complex bioinformatics visualizations.
 # """)
+=======
+    if submitted:
+        mailto_link = f"mailto:Albert.THORHALLSSON@univ-cotedazur.fr?subject={subject}&body=From: {name} ({email})%0A%0A{message}"
+        st.markdown(f"[📨 Click here to send via your email client]({mailto_link})", unsafe_allow_html=True)
+>>>>>>> 0a5ca80 (Fixing first commit)
