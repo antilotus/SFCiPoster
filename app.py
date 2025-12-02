@@ -7,18 +7,18 @@ st.set_page_config(page_title="SFCi poster ESI", layout="wide")
 st.title("🎓 Welcome to the SFCi poster ESI")
 
 # Uniform image display size (e.g., 250px height)
-#IMAGE_HEIGHT = 250
-
-IMAGE_WIDTH = 500
 st.header('Natural Population Analysis Charges')
-st.image('Media/NBO.gif')
-st.image('Media/NBOcharges_colorbar.png')
+st.image('Media/NBO.gif', width=500)
+st.image('Media/NBOcharges_colorbar.png', width=500)
 st.header('Atomic Decomposition of London Dispersion')
-st.image('Media/dispersion.gif')
-st.image('Media/disp_colorbar.png')
+st.image('Media/dispersion.gif', width=500)
+st.image('Media/disp_colorbar.png', width=500)
 st.header('Mulliken Analysis Charges')
-st.image('Media/mullikencharges.gif')
-st.image('Media/mulliken_colorbar.png')
+st.image('Media/mullikencharges.gif', width=500)
+st.image('Media/mulliken_colorbar.png', width=500)
+st.header('Natural Population Analysis Charges all QM atoms')
+st.image('Media/NPAfullqm.gif', width=500)
+st.image('Media/NBOcharges_colorbar.png', width=500)
 #st.header('Mulliken Analysis Charges (all QM atoms)')
 #st.image('Media/mullikenallqmwcolorbar.gif')
 
