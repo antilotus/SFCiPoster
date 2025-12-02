@@ -7,8 +7,9 @@ st.set_page_config(page_title="SFCi poster ESI", layout="wide")
 st.title("🎓 Welcome to the SFCi poster ESI")
 
 # Uniform image display size (e.g., 250px height)
-IMAGE_HEIGHT = 250
+#IMAGE_HEIGHT = 250
 
+IMAGE_WIDTH = 500
 st.header('Natural Population Analysis Charges')
 st.image('Media/NBO.gif')
 st.image('Media/NBOcharges_colorbar.png')
