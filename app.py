@@ -11,13 +11,15 @@ IMAGE_HEIGHT = 250
 
 st.header('Natural Population Analysis Charges')
 st.image('Media/NBO.gif')
+st.image('Media/NBOcharges_colorbar.png')
 st.header('Atomic Decomposition of London Dispersion')
 st.image('Media/dispersion.gif')
+st.image('Media/disp_colorbar.png')
 st.header('Mulliken Analysis Charges')
 st.image('Media/mullikencharges.gif')
-st.header('Mulliken Analysis Charges (all QM atoms)')
-st.image('Media/mullikenallqmwcolorbar.gif')
-st.header('Mulliken Analysis Charges (all QM atoms)')
+st.image('Media/mulliken_colorbar.png')
+#st.header('Mulliken Analysis Charges (all QM atoms)')
+#st.image('Media/mullikenallqmwcolorbar.gif')
 
 st.header("Methodology in full detail")
 st.markdown('''<h1 style='font-size:1.2em;'>
