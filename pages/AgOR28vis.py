@@ -7,7 +7,7 @@ st.set_page_config(page_title="AgVis", layout="wide")
 st.title("AgOR28 with TMT bound")
 
 # Path to your local PDB file
-pdb_path = "../Media/SPE2.pdb"
+pdb_path = "Media/SPE2.pdb"
 
 if os.path.exists(pdb_path):
     with open(pdb_path, "r") as f:
