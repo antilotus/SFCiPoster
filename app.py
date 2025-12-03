@@ -17,7 +17,6 @@ st.image('Media/disp_colorbar.png', width=500)
 st.subheader('Mulliken Analysis Charges')
 st.image('Media/mullikencharges.gif')
 st.image('Media/mulliken_colorbar.png', width=800)
-st.page_link("pages/NPAallQM.py", label="ChargesallQM")
 #st.header('Natural Population Analysis Charges all QM atoms')
 #video_file = open("Media/NPAfullqm.mp4", "rb")
 #video_bytes = video_file.read()
@@ -179,3 +178,6 @@ with st.form("contact_form"):
     if submitted:
         mailto_link = f"mailto:Albert.THORHALLSSON@univ-cotedazur.fr?subject={subject}&body=From: {name} ({email})%0A%0A{message}"
         st.markdown(f"[📨 Click here to send via your email client]({mailto_link})", unsafe_allow_html=True)
+        
+        
+st.page_link("pages/NPAallQM.py", icon="🔥")
