@@ -1,10 +1,46 @@
 import streamlit as st
+import matplotlib.pyplot as plt
+import plotly.express as px
 import py3Dmol
+import pandas as pd
+import numpy as np
 import os
+st.set_page_config(layout="wide")
 
-st.set_page_config(page_title="AgVis", layout="wide")
+st.title("SFCi poster ESI")
 
-st.title("AgOR28 with TMT bound")
+# --- Section 1: Images ---
+st.header("Images")
+# st.image("/nfs/mathusalem/ldavid/Communications/VISUAL_FOR_PREZ/ligand_movment_prez.png", caption="Example Figure from Results")
+
+# # --- Section 2: Matplotlib Graph ---
+# st.header("Matplotlib Graph")
+# fig, ax = plt.subplots()
+# x = np.linspace(0, 10, 100)
+# y = np.sin(x)
+# ax.plot(x, y, label="sin(x)")
+# ax.set_title("Sine Wave")
+# ax.legend()
+# st.pyplot(fig)
+
+
+
+# # --- Section 4: 3D Protein Viewer ---
+# st.header("3D Protein Structure Viewer")
+# with st.expander("View Protein in 3D"):
+#     # pdb_id = st.text_input("Enter PDB ID (e.g., 1BNA):", "1BNA")
+#     pdb_id= "2c29"
+#     if pdb_id:
+#         view = py3Dmol.view(query='pdb:' + pdb_id)
+#         view.setStyle({'cartoon': {'color': 'spectrum'}})
+#         view.zoomTo()
+#         view.setBackgroundColor('white')
+#         st.components.v1.html(view._make_html(), height=500)
+
+# --- Section 4: 3D Protein Viewer (Local File) ---
+
+# --- Section 4: 3D Protein Viewer (Always Visible) ---
+st.header("AgOR28 with 2,4,5-Trimethylthiazole")
 
 # Path to your local PDB file
 pdb_path = "../Media/SPE2.pdb"
@@ -73,4 +109,25 @@ if os.path.exists(pdb_path):
 else:
     st.error(f"PDB file not found at: {pdb_path}")
 
-st.page_link("app.py", label="Home")
+
+
+
+
+## --- Section 5: Video ---
+#st.header("Video")
+#st.video("../Videos/graph_evolution.mp4",autoplay=True)  # Supports local or URL path
+
+# --- Section 6: Markdown and Uploads ---
+# st.header("Upload & Notes")
+# uploaded_file = st.file_uploader("Upload a CSV file")
+# if uploaded_file:
+#     df_uploaded = pd.read_csv(uploaded_file)
+#     st.write("Uploaded Data Preview:")
+#     st.dataframe(df_uploaded)
+
+# st.markdown("""
+# ### Notes
+# - You can use this portal to showcase results dynamically.
+# - Combine static images with interactive elements.
+# - Perfect for defending or sharing complex bioinformatics visualizations.
+# """)
