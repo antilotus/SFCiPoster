@@ -46,7 +46,7 @@ Quantum Mechanics/Molecular Mechanics (QM/MM) single point energy (SPE) calculat
 <h1>''',
 unsafe_allow_html=True)
 
-#st.page_link("Pages/AgOR28vis.py", label="AgVis")
+st.page_link("Pages/AgOR28vis.py", label="AgVis")
 ## Path to your local PDB file
 #pdb_path = "./Media/SPE2.pdb"
 #
@@ -179,8 +179,3 @@ with st.form("contact_form"):
         mailto_link = f"mailto:Albert.THORHALLSSON@univ-cotedazur.fr?subject={subject}&body=From: {name} ({email})%0A%0A{message}"
         st.markdown(f"[📨 Click here to send via your email client]({mailto_link})", unsafe_allow_html=True)
         
-def page_2():
-   st.title("Page 2")
-
-pg = st.navigation(["pages/NPAallQM.py", page_2])
-pg.run()       
