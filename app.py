@@ -46,7 +46,8 @@ Quantum Mechanics/Molecular Mechanics (QM/MM) single point energy (SPE) calculat
 <h1>''',
 unsafe_allow_html=True)
 
-st.page_link("Pages/AgOR28vis.py", label="AgVis")
+st.page_link("pages/AgOR28vis.py")
+st.page_link("pages/NPAallQM.py")
 ## Path to your local PDB file
 #pdb_path = "./Media/SPE2.pdb"
 #
