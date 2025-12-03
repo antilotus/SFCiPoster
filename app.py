@@ -19,7 +19,6 @@ st.image('Media/mullikencharges.gif')
 st.image('Media/mulliken_colorbar.png', width=800)
 st.navigation(
     st.Page("pages/NPAallQM.py"),
-    st.Page("pages/AgOR28vis.py")
 )
 #st.page_link("Pages/NPAallQM.py", label="ChargesallQM")
 #st.header('Natural Population Analysis Charges all QM atoms')
