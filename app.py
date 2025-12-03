@@ -17,7 +17,11 @@ st.image('Media/disp_colorbar.png', width=500)
 st.subheader('Mulliken Analysis Charges')
 st.image('Media/mullikencharges.gif')
 st.image('Media/mulliken_colorbar.png', width=800)
-st.page_link("Pages/NPAallQM.py", label="ChargesallQM")
+st.navigation(
+    st.Page("pages/NPAallQM.py")
+    st.Page("pages/AgOR28vis.py")
+)
+#st.page_link("Pages/NPAallQM.py", label="ChargesallQM")
 #st.header('Natural Population Analysis Charges all QM atoms')
 #video_file = open("Media/NPAfullqm.mp4", "rb")
 #video_bytes = video_file.read()
@@ -47,7 +51,7 @@ Quantum Mechanics/Molecular Mechanics (QM/MM) single point energy (SPE) calculat
 <h1>''',
 unsafe_allow_html=True)
 
-st.page_link("Pages/AgOR28vis.py", label="AgVis")
+#st.page_link("Pages/AgOR28vis.py", label="AgVis")
 ## Path to your local PDB file
 #pdb_path = "./Media/SPE2.pdb"
 #
