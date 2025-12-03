@@ -17,9 +17,7 @@ st.image('Media/disp_colorbar.png', width=500)
 st.subheader('Mulliken Analysis Charges')
 st.image('Media/mullikencharges.gif')
 st.image('Media/mulliken_colorbar.png', width=800)
-st.navigation(
-    st.Page("pages/NPAallQM.py"),
-)
+st.navigation(st.Page("pages/NPAallQM.py"))
 #st.page_link("Pages/NPAallQM.py", label="ChargesallQM")
 #st.header('Natural Population Analysis Charges all QM atoms')
 #video_file = open("Media/NPAfullqm.mp4", "rb")
