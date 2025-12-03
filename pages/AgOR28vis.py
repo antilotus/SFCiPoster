@@ -73,4 +73,4 @@ if os.path.exists(pdb_path):
 else:
     st.error(f"PDB file not found at: {pdb_path}")
 
-#st.page_link("app.py", label="Home")
+st.sidebar.page_link("app.py", label="Home")
