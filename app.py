@@ -10,17 +10,22 @@ st.header('By Albert Thor Thorhallson')
 st.subheader('Natural Population Analysis Charges')
 st.image('Media/NBO.gif')
 st.image('Media/NBOcharges_colorbar.png', width=800)
+st.markdown('**Figure S1.** First frame is the RESP derived charges followed by NPA of 17 SPE snapshots')
+
 st.subheader('Atomic Decomposition of London Dispersion')
 st.image('Media/dispersion.gif', width=500)
 st.image('Media/disp_colorbar.png', width=500)
+st.markdown('**Figure S2.** Dispersion stabilization of each atom of TMT in the protein environment')
+
 st.subheader('Mulliken Analysis Charges')
 st.image('Media/mullikencharges.gif')
 st.image('Media/mulliken_colorbar.png', width=800)
+st.markdown('**Figure S3.** Mulliken charges of the 17 SPE snapshots')
 
-st.sidebar.page_link("pages/AgOR28vis.py")
-st.sidebar.page_link("pages/NPAallQM.py")
-st.sidebar.page_link("pages/references.py")
-st.sidebar.page_link("pages/videos.py")
+st.sidebar.page_link("pages/AgOR28vis.py", label="Protein visualisation")
+st.sidebar.page_link("pages/NPAallQM.py", label="All QM atom charges")
+st.sidebar.page_link("pages/references.py", label="Detailed methods and references")
+st.sidebar.page_link("pages/videos.py", label="Videos")
 
 st.header("📬 Contact")
 

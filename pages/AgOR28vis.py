@@ -4,7 +4,7 @@ import os
 
 st.set_page_config(page_title="AgVis", layout="wide")
 
-st.title("AgOR28 with TMT bound")
+st.title("Visulisation of AgOR28 with TMT bound")
 
 # Path to your local PDB file
 pdb_path = "Media/SPE2.pdb"
