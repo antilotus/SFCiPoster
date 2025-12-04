@@ -9,4 +9,5 @@ pyvis
 seaborn
 MDAnalysis
 streamlit-extras
+streamlit[pdf]
 rdkit
