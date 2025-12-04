@@ -4,7 +4,7 @@ import os
 
 st.set_page_config(page_title="Home", layout="wide")
 
-st.title("🎓 Welcome to the my SFCi poster ESI")
+st.title(":material/source_notes: Welcome to the my SFCi poster ESI")
 st.header('By Albert Thor Thorhallson')
 
 st.subheader('Natural Population Analysis Charges')
@@ -25,7 +25,8 @@ st.markdown('**Figure S3.** Mulliken charges of the 17 SPE snapshots')
 #st.sidebar.page_link("pages/1_All_QM_atom_charges.py", label="All QM atom charges")
 #st.sidebar.page_link("pages/2_Videos.py", label="Videos")
 #st.sidebar.page_link("pages/3_Protein_visualisation.py", label="Protein visualisation")
-#st.sidebar.page_link("pages/4_Detailed_methods_and_references.py", label="Detailed methods and references")
+#st.sidebar.page_link("pages/4_Detailed_methods_and_references.py", label="Detailed methods")
+#st.sidebar.page_link("pages/5_The_Poster_itself.py")
 st.subheader('Further information:')
 
 col1, col2, col3, col4 = st.columns(4)
