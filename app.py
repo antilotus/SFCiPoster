@@ -42,7 +42,7 @@ with col3:
 with col4:
     st.page_link("pages/4_Detailed_methods_and_references.py", label="Detailed methods and references", icon=":material/book_ribbon:")
 
-st.pdf("Media/POSTER_Thorhallsson_ICN.pdf")
+st.page_link("pages/5_The_Poster_itself.py", icon=":material/picture_as_pdf:")
 
 st.header("📬 Contact")
 
