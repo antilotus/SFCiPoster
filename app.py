@@ -22,10 +22,14 @@ st.image('Media/mullikencharges.gif')
 st.image('Media/mulliken_colorbar.png', width=800)
 st.markdown('**Figure S3.** Mulliken charges of the 17 SPE snapshots')
 
-st.sidebar.page_link("pages/AgOR28vis.py", label="Protein visualisation")
-st.sidebar.page_link("pages/NPAallQM.py", label="All QM atom charges")
-st.sidebar.page_link("pages/references.py", label="Detailed methods and references")
-st.sidebar.page_link("pages/videos.py", label="Videos")
+#st.sidebar.page_link("pages/1_All_QM_atom_charges.py", label="All QM atom charges")
+#st.sidebar.page_link("pages/2_Videos.py", label="Videos")
+#st.sidebar.page_link("pages/3_Protein_visualisation.py", label="Protein visualisation")
+#st.sidebar.page_link("pages/4_Detailed_methods_and_references.py", label="Detailed methods and references")
+st.page_link("pages/1_All_QM_atom_charges.py", label="All QM atom charges")
+st.page_link("pages/2_Videos.py", label="Videos")
+st.page_link("pages/3_Protein_visualisation.py", label="Protein visualisation")
+st.page_link("pages/4_Detailed_methods_and_references.py", label="Detailed methods and references")
 
 st.header("📬 Contact")
 
