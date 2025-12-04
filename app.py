@@ -26,10 +26,23 @@ st.markdown('**Figure S3.** Mulliken charges of the 17 SPE snapshots')
 #st.sidebar.page_link("pages/2_Videos.py", label="Videos")
 #st.sidebar.page_link("pages/3_Protein_visualisation.py", label="Protein visualisation")
 #st.sidebar.page_link("pages/4_Detailed_methods_and_references.py", label="Detailed methods and references")
-st.page_link("pages/1_All_QM_atom_charges.py", label="All QM atom charges")
-st.page_link("pages/2_Videos.py", label="Videos")
-st.page_link("pages/3_Protein_visualisation.py", label="Protein visualisation")
-st.page_link("pages/4_Detailed_methods_and_references.py", label="Detailed methods and references")
+st.subheader('Further information:')
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.page_link("pages/1_All_QM_atom_charges.py", label="All QM atom charges", icon=":material/ev_shadow_minus:")
+
+with col2:
+    st.page_link("pages/2_Videos.py", label="Videos", icon=":material/video_library:")
+
+with col3:
+    st.page_link("pages/3_Protein_visualisation.py", label="Protein visualisation", icon=":material/genetics:", help="Warning, slow and doesn't work on mobile")
+
+with col4:
+    st.page_link("pages/4_Detailed_methods_and_references.py", label="Detailed methods and references", icon=":material/book_ribbon:")
+
+st.pdf("Media/POSTER_Thorhallsson_ICN.pdf")
 
 st.header("📬 Contact")
 
