@@ -4,7 +4,7 @@ import os
 
 st.set_page_config(page_title="Home", layout="wide")
 
-st.title(":material/source_notes: Welcome to the my SFCi poster ESI")
+st.title(":material/source_notes: Welcome to my SFCi poster ESI")
 st.header('By Albert Thor Thorhallson')
 
 st.subheader('Natural Population Analysis Charges')
