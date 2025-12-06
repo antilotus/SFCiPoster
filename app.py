@@ -32,18 +32,18 @@ st.subheader('Further information:')
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    st.page_link("pages/1_All_QM_atom_charges.py", label="All QM atom charges", icon=":material/ev_shadow_minus:")
+    st.page_link("pages/1_All_QM_atom_charges.py", label="All QM atom charges", icon=":material/ev_shadow_minus:", help="NPA and Mulliken for all of the QM region")
 
 with col2:
-    st.page_link("pages/2_Videos.py", label="Videos", icon=":material/video_library:")
+    st.page_link("pages/2_Videos.py", label="Videos", icon=":material/video_library:", help="Videos showing the stabilities of ligands in the binding site")
 
 with col3:
-    st.page_link("pages/3_Protein_visualisation.py", label="Protein visualisation", icon=":material/genetics:", help="Warning, slow and doesn't work on mobile")
+    st.page_link("pages/3_Protein_visualisation.py", label="Protein visualisation", icon=":material/genetics:", help="Warning, can be slow to load")
 
 with col4:
-    st.page_link("pages/4_Detailed_methods_and_references.py", label="Detailed methods and references", icon=":material/book_ribbon:")
+    st.page_link("pages/4_Detailed_methods_and_references.py", label="Detailed methods and references", icon=":material/book_ribbon:", help="With hyperlinks for the references")
 
-st.page_link("pages/5_The_Poster_itself.py", icon=":material/picture_as_pdf:")
+st.page_link("pages/5_The_Poster_itself.py", icon=":material/picture_as_pdf:", help="The poster as a PNG, NB can be open as a image in a new tab")
 
 st.header("📬 Contact")
 
