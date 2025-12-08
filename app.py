@@ -52,7 +52,7 @@ with col2:
     st.page_link("pages/6_Single_Point_Energies.py", icon=":material/charger:", help="The energies of the snapshots")
 
 with col3:
-    st.page_link("pages/7_Protein_visualisation_all_SPE.py", icon=":material/3d:", help="The geometry of all of the snapshots")
+    st.page_link("pages/7_Protein_visualisation_all_SPE.py", icon=":material/3d:", help="The geometry of all of the snapshots (takes a while to load)")
 
 
 st.header("📬 Contact")
