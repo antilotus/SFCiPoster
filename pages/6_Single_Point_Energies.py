@@ -6,6 +6,7 @@ st.set_page_config(page_title="SPE", layout="wide")
 st.title("Single point energies of snapshots")
 SPEframe = pd.read_table("Media/SPE.dat", sep=r"\s+", header=None, names=["Snapshot nr.", "Energy (QM/MM)"])
 st.table(SPEframe.iloc[:,1])
+st.dataframe(SPEframe)
 
 st.sidebar.page_link("app.py", label="Home")
 st.sidebar.page_link("pages/1_All_QM_atom_charges.py", label="All QM atom charges")
