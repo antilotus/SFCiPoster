@@ -4,9 +4,9 @@ import pandas as pd
 st.set_page_config(page_title="SPE", layout="wide")
 
 st.title("Single point energies of snapshots")
-SPEframe = pd.read_table("Media/SPE.dat", sep=r"\s+", header=None, names=["Snapshot nr.", "Energy (QM/MM, kcal/mol)"])
+SPEframe = pd.read_table("Media/SPE.dat", sep=r"\s+", header=None, names=["Snapshot nr.", "Energy (QM, kcal/mol)"])
 conversion_factor = 627.509
-col = "Energy (QM/MM, kcal/mol)"
+col = "Energy (QM, kcal/mol)"
 SPEframe[col] = (SPEframe[col] - SPEframe[col].min()) * conversion_factor
 SPEframe = SPEframe.set_index("Snapshot nr.")
 #st.table(SPEframe.iloc[:,1])

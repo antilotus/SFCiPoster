@@ -1,12 +1,13 @@
 import streamlit as st
 import py3Dmol
 import os
+import glob
 
 st.set_page_config(page_title="AgVis", layout="wide")
 
 st.title("Visulisation of AgOR28 with TMT bound")
-st.header("Lowest energy conformer, SPE2")
 
+st.header("Lowest energy conformer, SPE2")
 # Path to your local PDB file
 pdb_path = "Media/SPE2.pdb"
 
@@ -35,14 +36,6 @@ if os.path.exists(pdb_path):
         'fontSize': 12
     })
 
-    #view.addLabel("NPH", {
-    #    'position': {'resn': 'NPH'},
-    #    'backgroundColor': 'blue',
-    #    'fontColor': 'blue',
-    #    'fontSize': 12
-    #})
-    # view.zoomTo({'resn': ['DHK', 'NPH']})
-
     # Licorice for specific residue numbers
     highlight_residues = [1466,1490,1493,1494,1497,1562,1589,1614,1617,1618,1621,1725]
     for resid in highlight_residues:
@@ -53,10 +46,6 @@ if os.path.exists(pdb_path):
             'fontColor': 'red',
             'fontSize': 10
         })
-
-
-
-
 
     # Set orientation manually (rotation in degrees)
     view.rotate(0, 'x')
@@ -69,7 +58,6 @@ if os.path.exists(pdb_path):
 
     view.setBackgroundColor('white')
     st.components.v1.html(view._make_html(), height=500)
-
 
 else:
     st.error(f"PDB file not found at: {pdb_path}")
