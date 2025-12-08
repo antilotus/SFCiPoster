@@ -3,14 +3,15 @@ import py3Dmol
 import os
 import glob
 
-st.set_page_config(page_title="AgVis", layout="wide")
+st.set_page_config(page_title="All SPE vis", layout="wide")
 
-st.title("Visulisation of AgOR28 with TMT bound")
+st.title("Visulisation of AgOR28 with TMT bound all SPE")
 
-st.header("Lowest energy conformer, SPE2")
 # Path to your local PDB file
 pdbs = glob.glob("Media/*.pdb")
 pdbs_sorted = sorted(pdbs)
+print(pdbs_sorted)
+pdbs_sorted
 
 def display_protein(pdb_path):
     if os.path.exists(pdb_path):
@@ -64,7 +65,10 @@ def display_protein(pdb_path):
     else:
         st.error(f"PDB file not found at: {pdb_path}")
 
+st.header("SPE1")
 display_protein(pdbs_sorted[0])
+st.header("SPE2")
+display_protein(pdbs_sorted[1])
 
 st.sidebar.page_link("app.py", label="Home")
 st.sidebar.page_link("pages/1_All_QM_atom_charges.py", label="All QM atom charges")
