@@ -10,7 +10,7 @@ st.title("Visulisation of AgOR28 with TMT bound")
 st.header("Lowest energy conformer, SPE2")
 # Path to your local PDB file
 pdbs = glob.glob("Media/*.pdb")
-pdbs_sorted = pdbs[:,0].argsort()
+pdbs_sorted = sorted(pdbs)
 
 def display_protein(pdb_path):
     if os.path.exists(pdb_path):
