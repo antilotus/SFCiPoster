@@ -9,6 +9,7 @@ conversion_factor = 627.509
 col = "Energy (QM, kcal/mol)"
 SPEframe[col] = (SPEframe[col] - SPEframe[col].min()) * conversion_factor
 SPEframe = SPEframe.set_index("Snapshot nr.")
+SPEframe = SPEframe.round(1)
 #st.table(SPEframe.iloc[:,1])
 st.dataframe(SPEframe)
 
