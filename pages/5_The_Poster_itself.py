@@ -14,3 +14,4 @@ st.sidebar.page_link("pages/3_Protein_visualisation.py", label="Protein visualis
 st.sidebar.page_link("pages/4_Detailed_methods_and_references.py", label="Detailed methods")
 #st.sidebar.page_link("pages/5_The_Poster_itself.py")
 st.sidebar.page_link("pages/6_Single_Point_Energies.py")
+st.sidebar.page_link("pages/7_Protein_visualisation_all_SPE.py")

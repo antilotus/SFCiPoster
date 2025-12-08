@@ -10,8 +10,6 @@ st.title("Visulisation of AgOR28 with TMT bound all SPE")
 # Path to your local PDB file
 pdbs = glob.glob("Media/*.pdb")
 pdbs_sorted = sorted(pdbs)
-print(pdbs_sorted)
-pdbs_sorted
 
 def display_protein(pdb_path):
     if os.path.exists(pdb_path):
@@ -103,7 +101,8 @@ display_protein(pdbs_sorted[8])
 st.sidebar.page_link("app.py", label="Home")
 st.sidebar.page_link("pages/1_All_QM_atom_charges.py", label="All QM atom charges")
 st.sidebar.page_link("pages/2_Videos.py", label="Videos")
-#st.sidebar.page_link("pages/3_Protein_visualisation.py", label="Protein visualisation")
+st.sidebar.page_link("pages/3_Protein_visualisation.py", label="Protein visualisation")
 st.sidebar.page_link("pages/4_Detailed_methods_and_references.py", label="Detailed methods")
 st.sidebar.page_link("pages/5_The_Poster_itself.py")
 st.sidebar.page_link("pages/6_Single_Point_Energies.py")
+#st.sidebar.page_link("pages/7_Protein_visualisation_all_SPE.py")
