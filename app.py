@@ -44,6 +44,7 @@ with col4:
     st.page_link("pages/4_Detailed_methods_and_references.py", label="Detailed methods and references", icon=":material/book_ribbon:", help="With hyperlinks for the references")
 
 st.page_link("pages/5_The_Poster_itself.py", icon=":material/picture_as_pdf:", help="The poster as a PNG, NB can be open as a image in a new tab")
+st.page_link("pages/6_Single_Point_Energies.py", icon=":material/charger:", help="The energies of the snapshots")
 
 st.header("📬 Contact")
 
